@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Удалить фон с фото</title>
+    <link rel="stylesheet" href="style.css?v=2">
+</head>
+<body>
+    <div class="container">
+        <h1>Удалить фон с фото</h1>
+
+        <div id="drop-zone" class="drop-zone">
+            <div class="drop-content">
+                <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/>
+                    <polyline points="17 8 12 3 7 8"/>
+                    <line x1="12" y1="3" x2="12" y2="15"/>
+                </svg>
+                <p>Перетащите изображение сюда</p>
+                <p class="or">или</p>
+                <button id="upload-btn" class="btn">Выбрать файл</button>
+                <input type="file" id="file-input" accept="image/*">
+                <p class="hint">Также можно вставить из буфера обмена (Ctrl+V)</p>
+            </div>
+        </div>
+
+        <div id="preview-section" class="preview-section hidden">
+            <div class="preview-container">
+                <div class="preview-box">
+                    <h3>Оригинал</h3>
+                    <img id="original-preview" alt="Оригинал">
+                </div>
+                <div class="preview-box">
+                    <h3>Без фона</h3>
+                    <div id="result-container">
+                        <img id="result-preview" alt="Результат" class="hidden">
+                        <div id="loading" class="loading hidden">
+                            <div class="spinner"></div>
+                            <p>Обработка...</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div id="save-section" class="save-section hidden">
+                <div class="save-row">
+                    <input type="text" id="filename-input" class="filename-input" placeholder="имя_файла" value="no-background">
+                    <button id="save-btn" class="btn save-btn">Сохранить PNG</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js?v=2"></script>
+</body>
+</html>
